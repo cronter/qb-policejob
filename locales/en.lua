@@ -147,6 +147,7 @@ local Translations = {
         license_revoke = 'Revoke a license from someone',
         place_object = 'Place/Delete An Object (Police Only)',
         cuff_player = 'Cuff Player (Police Only)',
+		uncuff_player = 'Uncuff Player (Police Only)',
         escort = 'Escort Player',
         callsign = 'Give Yourself A Callsign',
         clear_casign = 'Clear Area of Casings (Police Only)',

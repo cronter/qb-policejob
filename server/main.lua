@@ -107,6 +107,17 @@ local function DnaHash(s)
 end
 
 -- Commands
+
+QBCore.Commands.Add("uncuff", Lang:t("commands.uncuff_player"), {}, false, function(source, args)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    if Player.PlayerData.job.name == "police" and Player.PlayerData.job.onduty then
+        TriggerClientEvent("police:client:GetUnCuffed", src)
+    else
+        TriggerClientEvent('QBCore:Notify', src, Lang:t("error.on_duty_police_only"), 'error')
+    end
+end)
+
 QBCore.Commands.Add("spikestrip", Lang:t("commands.place_spike"), {}, false, function(source)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
@@ -1040,3 +1051,4 @@ CreateThread(function()
         UpdateBlips()
     end
 end)
+
